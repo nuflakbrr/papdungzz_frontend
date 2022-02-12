@@ -8,8 +8,8 @@ import { client } from '../client'
 import MasonryLayout from './MasonryLayout'
 import Spinner from './Spinner'
 
-const activeBtnStyles = 'bg-red-500 text-white font-bold p-2 rounded-full w-20 outline-none'
-const notActiveBtnStyles = 'bg-primary mr-4 text-black font-bold p-2 rounded-full w-20 outline-none'
+const activeBtnStyles = 'bg-[#433e72] dark:bg-[#5F51E0] text-white font-bold p-2 rounded-full w-20 outline-none'
+const notActiveBtnStyles = 'bg-primary mr-4 text-black dark:text-white font-bold p-2 rounded-full w-20 outline-none'
 
 const UserProfile = () => {
   const [user, setUser] = useState()
@@ -68,7 +68,7 @@ const UserProfile = () => {
               alt="user-pic"
             />
           </div>
-          <h1 className="font-bold text-3xl text-center mt-3">
+          <h1 className="font-bold text-3xl text-center mt-3 dark:text-white">
             {user.userName}
           </h1>
           <div className="absolute top-0 z-1 right-0 p-2">
@@ -82,7 +82,7 @@ const UserProfile = () => {
                     onClick={renderProps.onClick}
                     disabled={renderProps.disabled}
                   >
-                    <AiOutlineLogout color="red" fontSize={21} />
+                    <AiOutlineLogout className='text-[#433e72] dark:text-[#5F51E0]' fontSize={21} />
                   </button>
                 )}
                 onLogoutSuccess={logout}
@@ -119,7 +119,7 @@ const UserProfile = () => {
         </div>
 
         {pins?.length === 0 && (
-        <div className="flex justify-center font-bold items-center w-full text-1xl mt-2">
+        <div className="flex justify-center font-bold items-center w-full text-1xl mt-2 dark:text-white">
           No Pins Found!
         </div>
         )}
