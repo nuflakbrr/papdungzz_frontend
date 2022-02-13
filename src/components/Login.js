@@ -43,21 +43,20 @@ const Login = () => {
             </div>
             <div className='shadow-2xl'>
               <GoogleLogin
-                clientId={ process.env.REACT_APP_GOOGLE_API_TOKEN }
+                clientId={`${process.env.REACT_APP_GOOGLE_API_TOKEN}`}
                 render={(renderProps) => (
                   <button
-                    type='button'
-                    className='flex justify-center items-center bg-white hover:bg-gray-100 text-gray-800 font-bold py-2 px-4 rounded-full'
-                    onClick={ renderProps.onClick }
-                    disabled={ renderProps.disabled }
+                    type="button"
+                    className="flex justify-center items-center bg-white hover:bg-gray-100 text-gray-800 font-bold py-2 px-4 rounded-full"
+                    onClick={renderProps.onClick}
+                    disabled={renderProps.disabled}
                   >
-                    <FcGoogle className='w-6 h-6 mr-2' />
-                    Login with Google
+                    <FcGoogle className="mr-4" /> Sign in with google
                   </button>
                 )}
-                onSuccess={ responseGoogle }
-                onFailure={ responseGoogle }
-                cookiePolicy={ 'single_host_origin' }
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy="single_host_origin"
               />
             </div>
           </div>
